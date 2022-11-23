@@ -60,7 +60,7 @@ Data preparation yang digunakan oleh saya yaitu :
 
 Proses modeling yang saya lakukan pada data ini adalah dengan menggabungkan empat algoritma machine learning kemudian dicari performa yang paling baik dari keempat algoritma machine learning tersebut. adapun metriks yang dipakai dari keempat model adalah mencari nilai r2, dimana semakin tinggi nilai r2 maka semakin bagus algoritma tersebut
 
-![Hasil tes skor dari beberapa model](https://drive.google.com/drive/u/0/folders/1jY8_6lKueNZ7x2HpepdasD37m9YuaEkr)
+![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
 
 dapat dilihat dari bar gambar di atas dari ke model algoritma yang dipakai, bahwa  hasil terbaik diberikan oleh XGBRegressor. Ini mungkin dijelaskan oleh fakta bahwa beberapa hubungan tidak linier seperti durasi atau hari_tersisa. Jadi algoritma yang lebih fleksibel seperti XGBRegressor cenderung memberikan hasil yang lebih baik.
 
@@ -68,9 +68,7 @@ dapat dilihat dari bar gambar di atas dari ke model algoritma yang dipakai, bahw
 Sekarang mari kita lakukan model development menggunakan XGBRegressor
 
 berikut adalah hasil dari modelnya  
-![hasil model predisi](https://drive.google.com/drive/u/0/folders/1jY8_6lKueNZ7x2HpepdasD37m9YuaEkr)
-
-dari gambar tabel di atas dapat dilihat bahwa prediksi menggunakan XGB Regressor memberikan nilai MAE sebesar 1588.
+![hasil model predisi](https://raw.githubusercontent.com/aisyalfawwaz/Machinelearningterapan/main/price.png)
 
 
 ## Evaluation
