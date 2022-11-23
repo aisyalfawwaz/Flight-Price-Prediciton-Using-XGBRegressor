@@ -4,18 +4,18 @@
 
 Domain yang saya pilih pada proyek ini adalah **Bisnis Aviasi/Penerbangan**.
 Untuk itu sebuah dataset **Flight Price Prediction** yang didapatkan di platform kaggle dianalisis, adapun dataset pemesanan penerbangan yang diperoleh dari situs web “Ease My Trip” dan melakukan berbagai uji hipotesis statistik untuk mendapatkan informasi yang bermakna darinya. Algoritme statistik 'Regresi Linier' akan digunakan untuk melatih kumpulan data dan memprediksi variabel target berkelanjutan. 'Easemytrip' adalah platform internet untuk memesan tiket pesawat, dan karenanya merupakan platform yang digunakan calon penumpang untuk membeli tiket. Studi menyeluruh terhadap data akan membantu menemukan wawasan berharga yang akan sangat bermanfaat bagi calon penumpang dalam memilih maskapai penerbangan yang sesuai
+
 ## Business Understanding.
 
 ### Problem Statements
 
-1. Menemukan Variabel  yang paling mempengaruhi harga tiket?
+Bagaiamana  Variabel  mempengaruhi harga tiket masing-masing maskapai ?
 
 ### Goals
-Membuat prediksi harga tiket pesawat dari beberapa variabel agar para pembeli dapat dengan mudah memperhitungkan harga tiket pesawat di lain waktu
+Membuat prediksi harga tiket pesawat dari beberapa variabel dalam dataset, hasil prediksi nantinya digunakan para pembeli untuk mengetahui harga tiket pesawat tiap maskpai syang cocok bagi mereka.
 
 ### Solution statements
 Solution Statements yang akan dilakukan adalah dengan menerapkan 4 algoritma Machine Learning yaitu :
-
 
 - **K-Nearest Neighbor**.<br>
   KNN adalah algoritma yang relatif sederhana dibandingkan dengan algoritma lain. Algoritma KNN menggunakan ‘kesamaan fitur’ untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan.
@@ -58,42 +58,36 @@ Data preparation yang digunakan oleh saya yaitu :
 
 ## Modeling
 
-Proses modeling yang saya lakukan pada data ini adalah dengan menggabungkan empat algoritma machine learning kemudian dicari performa yang paling baik dari keempat algoritma machine learning tersebut. adapun metriks yang dipakai dari keempat model adalah mencari nilai r2, dimana semakin tinggi nilai r2 maka semakin bagus algoritma tersebut
+Proses modeling yang saya lakukan pada data ini adalah dengan menggabungkan empat algoritma machine learning kemudian dicari performa yang paling baik dari keempat algoritma machine learning tersebut. berikut adalah parameter yang saya gunakan dari tiap-tiap model yang diuji :
+
+models KNeighborsRegressor memiliki n-neighboor dengan nilai 50
+models LinearRegression memiliki parameter bawaan
+modelsXGBRegressormodel memiliki nilai n_jobs=5, learning_rate=0.1 ,max_depth=10, dan random_state=1
+models CatBoostRegressor memiliki nilai logging_level ='Silent', iterations=500, dan random_state=1
+
+Setelah itu dilakukan uji tiap model dengan fungsi get_scores lalu kemudian didapatkan hasil sebagai berikut :
 
 ![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
 
 dapat dilihat dari bar gambar di atas dari ke model algoritma yang dipakai, bahwa  hasil terbaik diberikan oleh XGBRegressor. Ini mungkin dijelaskan oleh fakta bahwa beberapa hubungan tidak linier seperti durasi atau hari_tersisa. Jadi algoritma yang lebih fleksibel seperti XGBRegressor cenderung memberikan hasil yang lebih baik.
 
+Untuk itu model XGBRegressor dipilih untuk menyelesaikan permasalahan kali ini, model yang dipilih kemudian dilatih dan dilakukan validasi, hasil dari nilai prediksi dan validasi divisualisasikan menjadi gambar dibawah ini :
 
-Sekarang mari kita lakukan model development menggunakan XGBRegressor
-
-berikut adalah hasil dari modelnya  
 ![hasil model predisi](https://raw.githubusercontent.com/aisyalfawwaz/Machinelearningterapan/main/price.png)
 
 
 ## Evaluation
 
-Evaluasi metrik yang digunakan untuk mengukur kinerja model adalah metrik MAE (Mean absolute  Error), karena kasus yang saya pilih merupakan kasus regresi.
+Karena kasus yang dipilih merupakan kasus regresi maka evaluasi metrik yang digunakan untuk mengukur kinerja model adalah metrik MAE (Mean absolute  Error), MAE pada dasarnya  adalah rata-rata selisih mutlak nilai sebenarnya (aktual) dengan nilai prediksi (peramalan).
 
-MAE pada dasarnya  adalah rata-rata selisih mutlak nilai sebenarnya (aktual) dengan nilai prediksi (peramalan).makin tinggi nilai ini, makin buruk modelnya. Nilai MAE tidak pernah negatif, karena kita menguadratkan kesalahan prediksi individu sebelum menjumlahkannya, tetapi akan menjadi nol untuk model yang sempurna.
+Adapun cara untuk menhitung nilai MAE adalah :
 
-Selain itu, didapatkan kesimpulan bahwa :
+(Δx) = xi – x,
 
-1. Model yang memberikan hasil terbaik adalah XGBRegressor dengan pada dataset uji skor R^2 sama dengan 0,9836 dan skor MAE sama dengan 1579. 
+dimana:
+xi adalah nilai hasil pengukuran
+x adalah nilai sebenarnya
 
-2. Ada gap yang besar antara tiket pesawat di bisnis dan ekonomi. Rata-rata tiket bisnis 6,5 kali lebih mahal daripada tiket ekonomi.
-
-3. Vistara dan AirIndia tampaknya menjadi perusahaan termahal dan AirAsia termurah. Namun untuk tiket bisnis, hanya Vistara dan AirIndia yang tersedia, dan Vistara sedikit lebih mahal.
-
-4. Secara umum, harga naik cukup lambat hingga 20 hari sebelum penerbangan dimana harga naik drastis. Namun satu hari sebelum penerbangan, biasanya masih ada kursi kosong yang belum terjual. Dengan demikian dimungkinkan untuk menemukan tiket tiga kali lebih murah dari hari sebelumnya.
-
-5. Semakin lama penerbangan semakin mahal tiketnya hingga mencapai sekitar 20 jam, maka harganya cenderung turun.
-
-6. Keberangkatan sore dan larut malam lebih murah, dan malam hari lebih mahal. dan keberangkatan pagi, siang dan larut malam lebih murah, dan malam hari lebih mahal.
-
-7. Penerbangan dari Delhi adalah yang termurah dari kota-kota lain rata-rata tampaknya sama tetapi sedikit lebih mahal untuk Chenai.
-Penerbangan ke Delhi adalah yang termurah dan ke Bengalore yang paling mahal.
-
-8. Secara umum, semakin banyak pemberhentian, semakin mahal harga tiket pesawatnya.
+oleh karena itu, semakin tinggi nilai ini maka semakin buruk modelnya dan apabila semakin mendekati nilai O maka dapat dikatakan semakin baik modelnya, adapun pada data ini mendapatkan nilai MAE sebesar 1588.
 
 **---Ini adalah bagian akhir laporan---**
