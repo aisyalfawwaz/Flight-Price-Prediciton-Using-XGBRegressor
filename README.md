@@ -90,4 +90,3 @@ x adalah nilai sebenarnya
 
 oleh karena itu, semakin tinggi nilai ini maka semakin buruk modelnya dan apabila semakin mendekati nilai O maka dapat dikatakan semakin baik modelnya, adapun pada data ini mendapatkan nilai MAE sebesar 1588.
 
-**---Ini adalah bagian akhir laporan---**
