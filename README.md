@@ -55,30 +55,58 @@ Berbagai fitur dari kumpulan data yang dibersihkan dijelaskan di bawah ini:
 Setelah itu dilakukan analisis pada masing-masing variabel dengan dilakukan visualisasi data  meliputi : 
 
 1. **Fitur perbedaan harga tiket antara kelas Ekonomi dan Bisnis?**
-![Fitur Perbedaan harga tiket](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
+
+![Fitur Perbedaan harga tiket](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/kelas%20.png?raw=true)
+
+analisis : Penerbangan bisnis hanya tersedia di dua perusahaan: Air India dan Vistara. Selain itu, terjadi selisih harga yang cukup besar di antara kedua kelas tersebut yang mencapai hampir 5 kali lipat dari harga tiket Ekonomi
+
 2. **Fitur perbedaan harga tiket tiap maskapai**
-![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
+
+![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/maskapai.png?raw=true)
+
+analisis : Dari visualisasi diatas, ada sedikit perbedaan antara masing-masing perusahaan pada grafik ini, AirAsia tampaknya memiliki penerbangan termurah saat Air India dan Vistara lebih mahal. Namun sepertinya tiket bisnis Vistara sedikit lebih mahal daripada tiket Air India.
+
 3. **Fitur pengaruh harga jika tiket dibeli hanya dalam 1 atau 2 hari sebelum keberangkatan?** 
-(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/1%202%20keberangkatan.png?raw=true)
+
+![fitur hari](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/1%202%20keberangkatan.png?raw=true)
+
+analisis :Ada kemungkinan untuk melihat dua kurva berbeda pada grafik ini, yang pertama, stabil antara 50 dan 20 hari sebelum penerbangan, dan kurva monoton positif antara 20 dan 2 hari sebelumnya.
+
 4. **Fitur harga berubah seiring durasi penerbangan**
-(https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/durasi.png?raw=true)
+
+![fiturdurasi](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/durasi.png?raw=true)
+
+analisis :Dari visualisasi data diatas dapat diamati  di sini hubungan tersebut tidak linier tetapi dapat didekati dengan kurva derajat kedua. Harga mencapai harga tinggi dalam durasi 20 jam sebelum turun lagi.
+
 5. **Fitur harga tiket berubah berdasarkan waktu keberangkatan dan waktu kedatangan?**
-(https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/waktu%20keberangkatan.png?raw=true)
+
+![fitureaktu](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/waktu%20keberangkatan.png?raw=true)
+
+analisis : dari visualisasi dapat dapat diamati bahwa berangkat di malam hari atau tiba di malam hari tetap menjadi cara termurah untuk bepergian. Tetapi juga terlihat bahwa tiba lebih awal juga murah dan penerbangan sore sedikit lebih murah daripada penerbangan sore, pagi dan malam.
+
+
 6. **Fitur  harga tiket pada asal dan Tujuan?**
-(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/asal.png?raw=true)
+
+![fiturharga](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/asal.png?raw=true)
+
+analisis : Di satu sisi, tampaknya penerbangan yang berangkat dari Delhi seringkali lebih murah daripada dari kota sumber lain dan ibu kota juga merupakan tujuan termurah mungkin karena sebagai ibu kota, bandara adalah yang terbesar dan menawarkan lebih banyak penerbangan. Di sisi lain, harganya kurang lebih sama dan Hyderabad menjadi tujuan termahal.
+
 7. **Fitur jumlah pemberhentian mempengaruhi harga?**
-(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/jumlah%20pemberhentian.png?raw=true)
+
+![fiturjumlah](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/jumlah%20pemberhentian.png?raw=true)
+
+analisis : dari visualisasi diatas didabatkan bahwa banyak semakin banyak pemberhentian maka harga tiket semakin naik
 
 lalu kemudian dilakukan visualisasi untuk menganalisis terhadap fitur tersebut untuk mengetahui fitu yang paling memengaruhi harga tiket
-(https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/paling%20memengaruhi.png?raw=true)
+![fiturpengaruh](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/paling%20memengaruhi.png?raw=true)
 
-Dari visualisasi data diatas dapat diketahui bahwa variabel yang paling memengaruhi harga tiket adalah Kelas tiket pesawat dan durasi.
+analisis : Dari visualisasi data diatas dapat diketahui bahwa variabel yang paling memengaruhi harga tiket adalah Kelas tiket pesawat dan durasi.
 
 ## Data Preparation
 
 Data preparation yang digunakan oleh saya yaitu :
-- melakukan encoding pada variabel stops dan kelas
-- Membuat variabel dummy pada variabel cities, waktu tempuh, dan maskapai
+- melakukan encoding pada variabel stops dan kelas dengan membuat sebuah fungsi bernama preprocessing dimana apabila variabel stop bernilai zero maka akan digantikan dengan angka 0, apabila bernilai one maka akan digantikan angka 1 dan apabila bernilai two_or_more maka akan digantikan dengan nilai 2
+- Membuat variabel dummy pada variabel cities, waktu tempuh, dan maskapai  dengan library pandas
 - Membagi data menjadi data training dan test : untuk membagi data untuk dilatih dan tes (2:8)
 
 
@@ -86,14 +114,17 @@ Data preparation yang digunakan oleh saya yaitu :
 
 Proses modeling yang saya lakukan pada data ini adalah dengan menggabungkan empat algoritma machine learning kemudian dicari performa yang paling baik dari keempat algoritma machine learning tersebut. berikut adalah parameter yang saya gunakan dari tiap-tiap model yang diuji :
 
-models KNeighborsRegressor bekerja berdasarkan prinsip bahwa setiap titik data yang berdekatan satu sama lain akan berada di kelas yang sama. Dengan kata lain, KNN mengklasifikasikan titik data baru berdasarkan kemiripan. parameter n-neighboor yang digunakan bernilai 50
+- model KNeighborsRegressor 
+bekerja berdasarkan prinsip bahwa setiap titik data yang berdekatan satu sama lain akan berada di kelas yang sama. Dengan kata lain, KNN mengklasifikasikan titik data baru berdasarkan kemiripan. parameter n-neighboor yang digunakan bernilai 50
 
-models LinearRegression bekerja dengan cara Linear Regression memprediksi nilai dari y dengan mengetahui nilai x dan menemukan nilai m dan b yang errornya paling minimal.
+- model LinearRegression 
+bekerja dengan cara Linear Regression memprediksi nilai dari y dengan mengetahui nilai x dan menemukan nilai m dan b yang errornya paling minimal.
 
-modelsXGBRegressormodel dipilih karena secara efektif bisa mempercepat sistem perhitungan dan mencegah overfitting karena didalmnya mengandung fitur tambahan, adapun parameter XGBRegressormodel yang digunakan memiliki nilai n_jobs=5, learning_rate=0.1 ,max_depth=10, dan random_state=1
+- model XGBRegressormodel 
+dipilih karena secara efektif bisa mempercepat sistem perhitungan dan mencegah overfitting karena didalmnya mengandung fitur tambahan, adapun parameter XGBRegressormodel yang digunakan memiliki nilai n_jobs=5, learning_rate=0.1 ,max_depth=10, dan random_state=1
 
-
-models CatBoostRegressor memiliki nilai logging_level ='Silent', iterations=500, dan random_state=1
+- models CatBoostRegressor 
+memiliki nilai logging_level ='Silent', iterations=500, dan random_state=1
 
 Setelah itu dilakukan uji tiap model dengan fungsi get_scores lalu kemudian didapatkan hasil sebagai berikut :
 
@@ -111,11 +142,30 @@ Karena kasus yang dipilih merupakan kasus regresi maka evaluasi metrik yang digu
 
 Adapun cara untuk menhitung nilai MAE adalah :
 
-(Δx) = xi – x,
+$$(Δx) = xi – x$$
 
 dimana:
 xi adalah nilai hasil pengukuran
 x adalah nilai sebenarnya
 
 oleh karena itu, semakin tinggi nilai ini maka semakin buruk modelnya dan apabila semakin mendekati nilai O maka dapat dikatakan semakin baik modelnya, adapun pada data ini didapatkan nilai MAE sebesar 1588.
+
+Oleh karena itu didapatkan beberapa kesimpulan dari data diatas :
+
+1. Model yang memberikan hasil terbaik adalah XGBRegressor dengan pada dataset uji skor R^2 sama dengan 0,9838 dan skor MAE sama dengan 1588. 
+
+2. Ada gap yang besar antara tiket pesawat di bisnis dan ekonomi. Rata-rata tiket bisnis 6,5 kali lebih mahal daripada tiket ekonomi.
+
+3. Vistara dan AirIndia tampaknya menjadi perusahaan termahal dan AirAsia termurah. Namun untuk tiket bisnis, hanya Vistara dan AirIndia yang tersedia, dan Vistara sedikit lebih mahal.
+
+4. Secara umum, harga naik cukup lambat hingga 20 hari sebelum penerbangan dimana harga naik drastis. Namun satu hari sebelum penerbangan, biasanya masih ada kursi kosong yang belum terjual. Dengan demikian dimungkinkan untuk menemukan tiket tiga kali lebih murah dari hari sebelumnya.
+
+5. Semakin lama penerbangan semakin mahal tiketnya hingga mencapai sekitar 20 jam, maka harganya cenderung turun.
+
+6. Keberangkatan sore dan larut malam lebih murah, dan malam hari lebih mahal. dan keberangkatan pagi, siang dan larut malam lebih murah, dan malam hari lebih mahal.
+
+7. Penerbangan dari Delhi adalah yang termurah dari kota-kota lain rata-rata tampaknya sama tetapi sedikit lebih mahal untuk Chenai.
+Penerbangan ke Delhi adalah yang termurah dan ke Bengalore yang paling mahal.
+
+8. Secara umum, semakin banyak pemberhentian, semakin mahal harga tiket pesawatnya.
 
