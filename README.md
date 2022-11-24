@@ -54,44 +54,39 @@ Berbagai fitur dari kumpulan data yang dibersihkan dijelaskan di bawah ini:
 
 Setelah itu dilakukan analisis pada masing-masing variabel dengan dilakukan visualisasi data  meliputi : 
 
-1. **Fitur perbedaan harga tiket antara kelas Ekonomi dan Bisnis?**
 
-![Fitur Perbedaan harga tiket](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/kelas%20.png?raw=true)
-
-analisis : Penerbangan bisnis hanya tersedia di dua perusahaan: Air India dan Vistara. Selain itu, terjadi selisih harga yang cukup besar di antara kedua kelas tersebut yang mencapai hampir 5 kali lipat dari harga tiket Ekonomi
-
-2. **Fitur perbedaan harga tiket tiap maskapai**
+1. **Fitur perbedaan harga tiket tiap maskapai**
 
 ![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/maskapai.png?raw=true)
 
 analisis : Dari visualisasi diatas, ada sedikit perbedaan antara masing-masing perusahaan pada grafik ini, AirAsia tampaknya memiliki penerbangan termurah saat Air India dan Vistara lebih mahal. Namun sepertinya tiket bisnis Vistara sedikit lebih mahal daripada tiket Air India.
 
-3. **Fitur pengaruh harga jika tiket dibeli hanya dalam 1 atau 2 hari sebelum keberangkatan?** 
+2. **Fitur pengaruh harga jika tiket dibeli hanya dalam 1 atau 2 hari sebelum keberangkatan?** 
 
 ![fitur hari](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/1%202%20keberangkatan.png?raw=true)
 
 analisis :Ada kemungkinan untuk melihat dua kurva berbeda pada grafik ini, yang pertama, stabil antara 50 dan 20 hari sebelum penerbangan, dan kurva monoton positif antara 20 dan 2 hari sebelumnya.
 
-4. **Fitur harga berubah seiring durasi penerbangan**
+3. **Fitur harga berubah seiring durasi penerbangan**
 
 ![fiturdurasi](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/durasi.png?raw=true)
 
 analisis :Dari visualisasi data diatas dapat diamati  di sini hubungan tersebut tidak linier tetapi dapat didekati dengan kurva derajat kedua. Harga mencapai harga tinggi dalam durasi 20 jam sebelum turun lagi.
 
-5. **Fitur harga tiket berubah berdasarkan waktu keberangkatan dan waktu kedatangan?**
+4. **Fitur harga tiket berubah berdasarkan waktu keberangkatan dan waktu kedatangan?**
 
 ![fitureaktu](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/waktu%20keberangkatan.png?raw=true)
 
 analisis : dari visualisasi dapat dapat diamati bahwa berangkat di malam hari atau tiba di malam hari tetap menjadi cara termurah untuk bepergian. Tetapi juga terlihat bahwa tiba lebih awal juga murah dan penerbangan sore sedikit lebih murah daripada penerbangan sore, pagi dan malam.
 
 
-6. **Fitur  harga tiket pada asal dan Tujuan?**
+5. **Fitur  harga tiket pada asal dan Tujuan?**
 
 ![fiturharga](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/asal.png?raw=true)
 
 analisis : Di satu sisi, tampaknya penerbangan yang berangkat dari Delhi seringkali lebih murah daripada dari kota sumber lain dan ibu kota juga merupakan tujuan termurah mungkin karena sebagai ibu kota, bandara adalah yang terbesar dan menawarkan lebih banyak penerbangan. Di sisi lain, harganya kurang lebih sama dan Hyderabad menjadi tujuan termahal.
 
-7. **Fitur jumlah pemberhentian mempengaruhi harga?**
+6. **Fitur jumlah pemberhentian mempengaruhi harga?**
 
 ![fiturjumlah](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/jumlah%20pemberhentian.png?raw=true)
 
@@ -126,15 +121,9 @@ dipilih karena secara efektif bisa mempercepat sistem perhitungan dan mencegah o
 - models CatBoostRegressor 
 memiliki nilai logging_level ='Silent', iterations=500, dan random_state=1
 
-Setelah itu dilakukan uji tiap model dengan fungsi get_scores lalu kemudian didapatkan hasil sebagai berikut :
+Setelah itu dilakukan uji tiap model dengan fungsi get_scores lalu kemudian didapatkan hasil terbaik yang diberikan oleh model XGBRegressor. Ini mungkin dijelaskan oleh fakta bahwa beberapa hubungan tidak linier seperti durasi atau hari_tersisa. Jadi algoritma yang lebih fleksibel seperti XGBRegressor cenderung memberikan hasil yang lebih baik.
 
-![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
-
-dapat dilihat dari bar gambar di atas dari ke model algoritma yang dipakai, bahwa  hasil terbaik diberikan oleh XGBRegressor. Ini mungkin dijelaskan oleh fakta bahwa beberapa hubungan tidak linier seperti durasi atau hari_tersisa. Jadi algoritma yang lebih fleksibel seperti XGBRegressor cenderung memberikan hasil yang lebih baik.
-
-Untuk itu model XGBRegressor dipilih untuk menyelesaikan permasalahan kali ini, model yang dipilih kemudian dilatih dan dilakukan validasi, hasinlnya adalah didapatkan nilai r2 sebesar 0.9838 dan nilai MAE 1588
-
-
+Untuk itu model XGBRegressor dipilih untuk menyelesaikan permasalahan kali ini, model yang dipilih kemudian dilatih dan dilakukan validasi
 
 ## Evaluation
 
