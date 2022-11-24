@@ -2,7 +2,9 @@
 
 ## Domain Proyek.
 
-Domain yang saya pilih pada proyek ini adalah **Bisnis Aviasi/Penerbangan**.
+Domain yang saya pilih pada proyek ini adalah **Bisnis Aviasi/Penerbangan**
+
+Pelanggan airline pasti tidak asing dengan sistem pemesanan tiket pesawat seperti ini. Penerbangan yang sama bisa datang dengan harga yang berbeda, tergantung engine pembanding harga yang digunakan pelanggan. Waktu keberangkatan, destinasi, jarak penerbangan, dan jumlah kursi yang tersedia juga dapat memengaruhi harga tiket. Dan harga tiket yang sama pun bisa berubah dalam hitungan menit.Inilah yang disebut dynamic pricing, yaitu teknik menyesuaikan harga berdasarkan situasi terkini untuk mencapai tingkat yang paling menguntungkan (bagi airline tentunya).
 
 Untuk itu sebuah dataset **Flight Price Prediction** yang didapatkan di platform kaggle dianalisis, adapun dataset pemesanan penerbangan yang diperoleh dari situs web “Ease My Trip” dan melakukan berbagai uji hipotesis statistik untuk mendapatkan informasi yang bermakna darinya. Algoritma statistik 'Regresi Linier' akan digunakan untuk melatih kumpulan data dan memprediksi variabel target berkelanjutan. 'Easemytrip' adalah platform internet untuk memesan tiket pesawat, dan karenanya merupakan platform yang digunakan calon penumpang untuk membeli tiket. Studi menyeluruh terhadap data akan membantu menemukan wawasan berharga yang akan sangat bermanfaat bagi calon penumpang dalam memilih maskapai penerbangan yang sesuai
 
@@ -10,10 +12,11 @@ Untuk itu sebuah dataset **Flight Price Prediction** yang didapatkan di platform
 
 ### Problem Statements
 
-Bagaiamana  Variabel yang tercantum dalam pemesanan tiket memengaruhi harga tiket masing-masing maskapai ?
+Bagaimana pengaruh variabel-variabel dalam dataset terhadap harga jual tiket pesawat ?
 
 ### Goals
-Membuat prediksi harga tiket pesawat dari variabel yang tersedia dalam dataset, hasil prediksi nantinya digunakan para pembeli untuk mengetahui harga tiket pesawat tiap maskpai yang cocok bagi mereka.
+
+Membuat prediksi harga jual tiket pesawat dari variabel variabel dalam dataset meliputi *airline, flight, source city, departure time, stops, arrival time, destination city, class, days left*, sehingga calon penumpang bisa mengetahui penyebab perbedaan harga tiket pesawat. 
 
 ### Solution statements
 Solution Statements yang akan dilakukan adalah dengan menerapkan 4 algoritma *Machine Learning* yaitu :
@@ -49,6 +52,28 @@ Berbagai fitur dari kumpulan data yang dibersihkan dijelaskan di bawah ini:
 10. Days Left : Ini adalah karakteristik turunan yang dihitung dengan mengurangkan tanggal perjalanan dengan tanggal pemesanan.
 11. Price: Variabel target menyimpan informasi harga tiket.
 
+Setelah itu dilakukan analisis pada masing-masing variabel dengan dilakukan visualisasi data  meliputi : 
+
+1. **Fitur perbedaan harga tiket antara kelas Ekonomi dan Bisnis?**
+(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/kelas%20.png?raw=true)
+2. **Fitur perbedaan harga tiket tiap maskapai**
+(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/maskapai.png?raw=true)
+3. **Fitur pengaruh harga jika tiket dibeli hanya dalam 1 atau 2 hari sebelum keberangkatan?** 
+(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/1%202%20keberangkatan.png?raw=true)
+4. **Fitur harga berubah seiring durasi penerbangan**
+(https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/durasi.png?raw=true)
+5. **Fitur harga tiket berubah berdasarkan waktu keberangkatan dan waktu kedatangan?**
+(https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/waktu%20keberangkatan.png?raw=true)
+6. **Fitur  harga tiket pada asal dan Tujuan?**
+(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/asal.png?raw=true)
+7. **Fitur jumlah pemberhentian mempengaruhi harga?**
+(https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)](https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/jumlah%20pemberhentian.png?raw=true)
+
+lalu kemudian dilakukan visualisasi untuk menganalisis terhadap fitur tersebut untuk mengetahui fitu yang paling memengaruhi harga tiket
+(https://github.com/aisyalfawwaz/Flight-Price-Prediciton-Using-XGBRegressor/blob/main/paling%20memengaruhi.png?raw=true)
+
+Dari visualisasi data diatas dapat diketahui bahwa variabel yang paling memengaruhi harga tiket adalah Kelas tiket pesawat dan durasi.
+
 ## Data Preparation
 
 Data preparation yang digunakan oleh saya yaitu :
@@ -61,9 +86,13 @@ Data preparation yang digunakan oleh saya yaitu :
 
 Proses modeling yang saya lakukan pada data ini adalah dengan menggabungkan empat algoritma machine learning kemudian dicari performa yang paling baik dari keempat algoritma machine learning tersebut. berikut adalah parameter yang saya gunakan dari tiap-tiap model yang diuji :
 
-models KNeighborsRegressor memiliki n-neighboor dengan nilai 50
-models LinearRegression memiliki parameter bawaan
-modelsXGBRegressormodel memiliki nilai n_jobs=5, learning_rate=0.1 ,max_depth=10, dan random_state=1
+models KNeighborsRegressor bekerja berdasarkan prinsip bahwa setiap titik data yang berdekatan satu sama lain akan berada di kelas yang sama. Dengan kata lain, KNN mengklasifikasikan titik data baru berdasarkan kemiripan. parameter n-neighboor yang digunakan bernilai 50
+
+models LinearRegression bekerja dengan cara Linear Regression memprediksi nilai dari y dengan mengetahui nilai x dan menemukan nilai m dan b yang errornya paling minimal.
+
+modelsXGBRegressormodel dipilih karena secara efektif bisa mempercepat sistem perhitungan dan mencegah overfitting karena didalmnya mengandung fitur tambahan, adapun parameter XGBRegressormodel yang digunakan memiliki nilai n_jobs=5, learning_rate=0.1 ,max_depth=10, dan random_state=1
+
+
 models CatBoostRegressor memiliki nilai logging_level ='Silent', iterations=500, dan random_state=1
 
 Setelah itu dilakukan uji tiap model dengan fungsi get_scores lalu kemudian didapatkan hasil sebagai berikut :
