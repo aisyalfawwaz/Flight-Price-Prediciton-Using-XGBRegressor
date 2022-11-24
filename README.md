@@ -55,8 +55,7 @@ Berbagai fitur dari kumpulan data yang dibersihkan dijelaskan di bawah ini:
 Setelah itu dilakukan analisis pada masing-masing variabel dengan dilakukan visualisasi data  meliputi : 
 
 1. **Fitur perbedaan harga tiket antara kelas Ekonomi dan Bisnis?**
-
-![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
+![Fitur Perbedaan harga tiket](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
 2. **Fitur perbedaan harga tiket tiap maskapai**
 ![Hasil tes skor dari beberapa model](https://github.com/aisyalfawwaz/Machinelearningterapan/blob/main/regressor.png?raw=truer)
 3. **Fitur pengaruh harga jika tiket dibeli hanya dalam 1 atau 2 hari sebelum keberangkatan?** 
